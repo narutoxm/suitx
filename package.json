@@ -1,0 +1,27 @@
+{
+  "name": "suitx",
+  "private": true,
+  "version": "0.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev:public": "tsx src/public.ts",
+    "dev:relay": "tsx src/relay.ts",
+    "dev:all": "concurrently -k -n public,relay \"tsx src/public.ts\" \"tsx src/relay.ts\"",
+    "start:public": "node dist/public.js",
+    "start:relay": "node dist/relay.js",
+    "start:all": "concurrently -k -n public,relay \"node dist/public.js\" \"node dist/relay.js\""
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "mysql2": "^3.12.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.10",
+    "@types/ws": "^8.5.13",
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
